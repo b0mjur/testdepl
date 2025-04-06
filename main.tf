@@ -17,7 +17,7 @@ resource "aws_instance" "web_server" {
               #!/bin/bash
               yum update -y
               PUBLIC_IP=$(curl -s https://api.ipify.org)
-              curl -X GET "https://devops:11653bd900a61a61152c8caab3b8f24def@jenkins-ops.portnov.com/job/vitalii-ansible-task/buildWithParameters?token=Abc123456&MANAGED_HOST=$PUBLIC_IP"
+              curl -X GET "https://devops:11653bd900a61a61152c8caab3b8f24def@jenkins-ops.portnov.com/job/ansible-task/buildWithParameters?token=Abc123456&MANAGED_HOST=$PUBLIC_IP"
               EOF
 }
 
