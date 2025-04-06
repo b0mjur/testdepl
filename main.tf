@@ -16,6 +16,8 @@ resource "aws_instance" "web_server" {
   user_data = <<-EOF
               #!/bin/bash
               yum update -y
+              PUBLIC_IP=$(curl -s https://api.ipify.org)
+              curl -X GET "https://devops:11653bd900a61a61152c8caab3b8f24def@jenkins-ops.portnov.com/job/vitalii_webhook/buildWithParameters?token=Abc123456&TEST_PARAM=$PUBLIC_IP"
               EOF
 }
 
